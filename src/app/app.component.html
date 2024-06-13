@@ -1,0 +1,57 @@
+<div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn ">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    </button>
+
+    <img src="assets/img/logo2.png" width="250" height="auto" style="margin-top: -20px; margin-right: -89px;">
+
+    <span class="example-spacer"></span>
+    <div class="nav-links" style="margin-left: auto;">
+
+
+      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">
+        <mat-icon style="color: rgb(152, 27, 129);">person</mat-icon>
+      </a>    </div>
+  </mat-toolbar>.
+</div>
+
+  <div *ngIf="isAdminLoggedIn">
+  
+  
+  <mat-toolbar color="primary">
+    
+    <img src="assets/img/logo2.png" width="250" height="auto" style="margin-top: -20px; margin-right: -39px;">
+    <span class="example-spacer"></span>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active" >Décision</a>
+      <a nz-button nzType="link" routerLink="/admin/category" routerLinkActive="active" >Category</a>
+      <a nz-button nzType="link" routerLink="/admin/type" routerLinkActive="active" >Utilisateurs</a>
+
+
+  
+      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active" (click)="logout()"><mat-icon style="color: rgb(146, 104, 141);">logout</mat-icon></a>
+    </div>
+   
+  </mat-toolbar>
+  
+  </div>
+  
+  
+  <div *ngIf="isCustomerLoggedIn">
+  
+  <mat-toolbar color="primary">
+    
+    <img src="assets/img/logo2.png" width="250" height="auto" style="margin-top: -20px; margin-right: -39px;">
+    <span class="example-spacer"></span>
+    <div class="nav-links">
+      
+      <a nz-button nzType="link" routerLink="/customer/dashboard" routerLinkActive="active" >Publier vos nouvelles </a>
+      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active" (click)="logout()"><mat-icon style="color: rgb(146, 104, 141);">logout</mat-icon></a>
+    </div>
+  
+  </mat-toolbar>
+  </div>
+  
+  
+  
+  <router-outlet></router-outlet> 
